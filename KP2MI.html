@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BP3MI Manado Sulawesi Utara - Kontak & Panduan Pekerja Migran</title>
+    <link rel="stylesheet" href="KP2MI.css"> 
+</head>
+<body>
+
+    <div class="slider-container" id="sliderContainer">
+        
+        <!-- HALAMAN 1: Welcome Slide -->
+        <div class="page page-one">
+            <img src="logo.png" alt="Logo BP3MI" class="logo-top-left">
+
+            <h1 class="welcome-text">
+                Selamat datang Di layanan Pengaduan<br>
+                <span class="brand-color">BP3MI Sulawesi Utara</span>
+            </h1>
+            
+            <div class="slide-track" id="slideTrack">
+                <div class="slide-text">Geser untuk melanjutkan</div>
+                <div class="slide-button" id="slideBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN 2: Konten Utama -->
+        <div class="page page-two">
+            
+            <button class="back-to-home-btn" id="backBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Kembali Ke Depan
+            </button>
+
+            <header>
+                <div class="header-content">
+                    <img src="logo.png" alt="Logo BP3MI" class="logo-top">
+                    <div class="header-title">
+                        <h2>BP3MI Manado Sulawesi Utara (Kontak & Panduan Pekerja Migran)</h2>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">
+                
+                <!-- ALUR PENGADUAN -->
+                <div class="card">
+                    <h3>📝 Alur Pengaduan & Laporan</h3>
+                    <div class="accordion">
+                        <details>
+                            <summary>1. Cara Melapor Lewat WhatsApp Darurat</summary>
+                            <div class="details-wrapper">
+                                <div class="details-content">
+                                    <div class="details-inner-padding">
+                                        Tekan tombol pengaduan di bawah. Sistem akan otomatis membuka WhatsApp Anda dengan draf pesan darurat. Isi nama, nomor paspor, lokasi negara, serta kronologi masalah Anda secara singkat, lalu kirim.
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>2. Apa yang Terjadi Setelah Melapor?</summary>
+                            <div class="details-wrapper">
+                                <div class="details-content">
+                                    <div class="details-inner-padding">
+                                        Tim krisis BP3MI Manado Sulawesi Utara akan memverifikasi laporan Anda, berkoordinasi langsung dengan KBRI/KJRI setempat, serta mengawal proses perlindungan hukum atau evakuasi jika diperlukan.
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details>
+                            <summary>3. Kerahasiaan Data Pelapor</summary>
+                            <div class="details-wrapper">
+                                <div class="details-content">
+                                    <div class="details-inner-padding">
+                                        Seluruh identitas pelapor, korban, maupun keluarga dijamin aman dan dirahasiakan sepenuhnya oleh negara demi keselamatan bersama.
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- CARI HOTLINE KBRI / KJRI -->
+                <div class="card">
+                    <h3>📞 Nomor Hotline KBRI & KJRI Dunia</h3>
+                    <input type="text" id="searchBar" onkeyup="searchNegara()" placeholder="Cari negara (misal: Taiwan, Malaysia)...">
+                    
+                    <div id="kontakWilayahContainer"></div>
+                </div>
+
+                <!-- TOMBOL SOS (SUDAH DIPINDAHKAN KE BAWAH) -->
+                <section class="sos-section">
+                    <button id="sosButton" class="btn-sos">TOMBOL PENGADUAN</button>
+                    <p class="hint">*Otomatis membuka WhatsApp & SMS Darurat</p>
+                </section>
+
+            </div>
+
+            <footer>
+                <p class="footer-title">Ikuti Media Sosial Resmi:</p>
+                <div class="sosmed-container">
+                    <a href="https://www.facebook.com/bp2misulut/" target="_blank" class="sosmed-icon facebook" title="Facebook">
+                        <svg viewBox="0 0 320 512"><path d="M80 299.3V256H12v-74.7h68v-60.8c0-67.4 41.2-104 101.2-104 28.8 0 53.5 2.1 60.7 3v70.4l-41.8.02c-32.7 0-39 15.6-39 38.4V181.3h78.1L229.2 256H161v183.6H80z"/></svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/bp3mi.sulawesiutara/" target="_blank" class="sosmed-icon instagram" title="Instagram">
+                        <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 344.2c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+
+                    <a href="http://tiktok.com/@bp3misulawesiutara" target="_blank" class="sosmed-icon tiktok" title="TikTok">
+                        <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.33V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/></svg>
+                    </a>
+                </div>
+                <p class="copyright">© 2026 BP3MI Manado Sulawesi Utara. All Rights Reserved.</p>
+            </footer>
+
+        </div> 
+    </div> 
+
+    <script src="KP2MI.js"></script> 
+</body>
+</html>

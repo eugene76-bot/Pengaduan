@@ -1,0 +1,504 @@
+/* --- RESET DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #fffbf5;
+}
+
+/* Container utama pembungkus kedua halaman */
+.slider-container {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Pembagian layout untuk masing-masing halaman */
+.page {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+/* HALAMAN 1 */
+.page-one {
+    background-image: url('B&W_GRADASI.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    color: #1c2d37;
+    position: relative;
+}
+
+.page-one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 251, 245, 0.2); 
+    z-index: 1;
+}
+
+.logo-top-left, .welcome-text, .slide-track {
+    position: relative;
+    z-index: 2;
+}
+
+.logo-top-left {
+    position: absolute !important;
+    top: 25px;
+    left: 25px;
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.welcome-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8); 
+    animation: fadeInDown 1s ease-out;
+}
+
+.brand-color {
+    color: #aa841c;
+}
+
+.slide-track {
+    width: 300px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.6); 
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05), 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(170, 132, 28, 0.4);
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.slide-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #aa841c;
+    letter-spacing: 1px;
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
+.slide-button {
+    width: 50px;
+    height: 50px;
+    background: #aa841c;
+    border-radius: 50px;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(170, 132, 28, 0.3);
+    position: absolute;
+    left: 5px;
+    z-index: 10;
+}
+
+.slide-button:active {
+    cursor: grabbing;
+    background: #d4a325;
+}
+
+.slide-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+/* HALAMAN 2 */
+.page-two {
+    background-color: #fffbf5;
+    overflow-y: auto;
+    height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.back-to-home-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #aa841c;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+    background: #1c2d37;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #aa841c;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;        
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 40px;
+    min-height: 60px;
+}
+
+.logo-top {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%); 
+    z-index: 2;
+    display: block;
+}
+
+.header-title {
+    text-align: center;
+    padding: 0 120px;
+}
+
+header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* --- TOMBOL SOS (UPDATE JARAK ATASNYA) --- */
+.sos-section {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+.btn-sos {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    width: 100%;
+    max-width: 750px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(217, 83, 79, 0.4);
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.btn-sos:hover {
+    background-color: #c9302c;
+    transform: translateY(-2px);
+}
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* --- KARTU KONTEN (CARD) --- */
+.card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #f5ebd5;
+    backdrop-filter: blur(5px);
+}
+
+.card h3 {
+    color: #aa841c;
+    margin-bottom: 20px;
+    border-left: 5px solid #aa841c;
+    padding-left: 12px;
+    font-size: 19px;
+}
+
+.sub-title-instansi {
+    color: #555;
+    margin: 5px 0 8px 0;
+    font-size: 14px;
+}
+
+.list-instansi {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.list-instansi-last {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #f5ebd5;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+    background: #fff;
+}
+
+#searchBar:focus {
+    border-color: #aa841c;
+}
+
+/* --- ACCORDION --- */
+.accordion details, .kawasan-details {
+    border: 1px solid #f5ebd5;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion details:hover, .kawasan-details:hover {
+    border-color: #aa841c;
+    box-shadow: 0 6px 16px rgba(170, 132, 28, 0.15);
+    transform: translateY(-1px);
+}
+
+.accordion details[open], .kawasan-details[open] {
+    border-color: #aa841c;
+}
+
+.accordion summary, .kawasan-summary {
+    background-color: #fdfbf7;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.accordion summary:hover, .kawasan-summary:hover {
+    background-color: #f5ebd5;
+}
+
+.accordion summary::after, .kawasan-summary::after {
+    content: "▼";
+    font-size: 11px;
+    color: #aa841c;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion details[open] summary::after, 
+.kawasan-details[open] .kawasan-summary::after {
+    transform: rotate(-180deg);
+}
+
+.details-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+details[open] .details-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.details-content {
+    min-height: 0;
+    transition: visibility 0.35s;
+    visibility: hidden;
+}
+
+details[open] .details-content {
+    visibility: visible;
+}
+
+.details-inner-padding {
+    padding: 20px;
+    background: #fff;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #f5ebd5;
+}
+
+/* --- DAFTAR SUB-BAGIAN KONTAK --- */
+.kontak-item {
+    padding: 14px 16px;
+    border-bottom: 1px dashed #f5ebd5;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.kontak-item:hover {
+    background-color: #fdfbf7;
+    border-bottom-color: #aa841c;
+    padding-left: 22px;
+}
+
+.kontak-item:last-child {
+    border-bottom: none;
+}
+
+.kontak-item strong {
+    color: #222;
+    font-size: 14px;
+}
+
+.kontak-item:hover strong {
+    color: #aa841c;
+}
+
+.kontak-item p {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* --- FOOTER & SOSIAL MEDIA --- */
+footer {
+    background-color: #aa841c;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.sosmed-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-bottom: 20px;
+}
+
+.sosmed-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.15); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sosmed-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white; 
+}
+
+.sosmed-icon.facebook:hover { background-color: #3b5998; }
+.sosmed-icon.instagram:hover { background-color: #e1306c; }
+.sosmed-icon.tiktok:hover { background-color: #000000; }
+.sosmed-icon:hover { transform: translateY(-4px); }
+
+.copyright {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* LAYOUT RESPONSIVE HP */
+@media (max-width: 900px) {
+    .logo-top-left {
+        top: 15px;
+        left: 15px;
+        height: 45px;
+    }
+    .welcome-text {
+        font-size: 1.8rem;
+        margin-top: 60px;
+    }
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+    .logo-top {
+        position: static; 
+        transform: none;
+        margin-bottom: 10px;
+    }
+    .header-title { padding: 0; }
+    header h2 { font-size: 16px; }
+}
